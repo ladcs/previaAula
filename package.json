@@ -1,7 +1,7 @@
 {
   "name": "estagio",
   "version": "0.1.0",
-  "homepage": "https:\/\/ladcs.github.io/maquinas-eletricas",
+  "homepage": "https:\/\/ladcs.github.io/previaAula",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",

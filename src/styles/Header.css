@@ -1,0 +1,86 @@
+header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.externalNav {
+  display: flex;
+  justify-content: center;
+  background-color: #00753B;
+  height: 40px;
+  width: 100%;
+  font-family: "Lato",sans-serif;
+  font-size: 17px;
+  line-height: 10px;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.extermalNav div {
+  justify-content: space-around;
+}
+
+.externalNav ul {
+  justify-content: space-between;
+  list-style-type: none;
+  display: flex;
+}
+
+.externalNav li {
+  display: list-item;
+  margin-right: 60px;
+  text-align: -webkit-match-parent;
+}
+
+.externalNavL {
+  margin-right: 200px;
+}
+
+.externalNavR .externalNavL {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+h1 {
+  color: white;
+}
+
+.icones {
+  display: flex;
+  justify-content: space-around;
+  background-color: #004A25;
+  width: 100%;
+  height: 68px;
+  display: flex;
+  padding: 0.5rem 0;
+}
+
+.UEL {
+  max-width: 250px;
+  max-height: 50px;
+}
+
+.DEEL {
+  max-width: 50px;
+}
+
+h1 {
+  font-size: 1.5em;
+}

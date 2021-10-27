@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/maquinas-eletricas/static/css/main.09d04f5d.chunk.css",
+    "main.js": "/maquinas-eletricas/static/js/main.15691840.chunk.js",
+    "main.js.map": "/maquinas-eletricas/static/js/main.15691840.chunk.js.map",
+    "runtime-main.js": "/maquinas-eletricas/static/js/runtime-main.86c2d629.js",
+    "runtime-main.js.map": "/maquinas-eletricas/static/js/runtime-main.86c2d629.js.map",
+    "static/js/2.80120e8e.chunk.js": "/maquinas-eletricas/static/js/2.80120e8e.chunk.js",
+    "static/js/2.80120e8e.chunk.js.map": "/maquinas-eletricas/static/js/2.80120e8e.chunk.js.map",
+    "static/js/3.e040ca6e.chunk.js": "/maquinas-eletricas/static/js/3.e040ca6e.chunk.js",
+    "static/js/3.e040ca6e.chunk.js.map": "/maquinas-eletricas/static/js/3.e040ca6e.chunk.js.map",
+    "index.html": "/maquinas-eletricas/index.html",
+    "static/css/main.09d04f5d.chunk.css.map": "/maquinas-eletricas/static/css/main.09d04f5d.chunk.css.map",
+    "static/js/2.80120e8e.chunk.js.LICENSE.txt": "/maquinas-eletricas/static/js/2.80120e8e.chunk.js.LICENSE.txt",
+    "static/media/ilustraçãoTrafo.0654f8c5.png": "/maquinas-eletricas/static/media/ilustraçãoTrafo.0654f8c5.png",
+    "static/media/nucleoComum.1d76e5a0.png": "/maquinas-eletricas/static/media/nucleoComum.1d76e5a0.png",
+    "static/media/nucleoDoisLugar.f45ebe51.png": "/maquinas-eletricas/static/media/nucleoDoisLugar.f45ebe51.png",
+    "static/media/simbolo_uel.073ccc94.jpg": "/maquinas-eletricas/static/media/simbolo_uel.073ccc94.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.86c2d629.js",
+    "static/js/2.80120e8e.chunk.js",
+    "static/css/main.09d04f5d.chunk.css",
+    "static/js/main.15691840.chunk.js"
+  ]
+}

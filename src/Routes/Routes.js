@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Switch, Route, HashRouter } from 'react-router-dom';
 import InitialPage from '../pages/InitialPage';
 import Aula1 from '../pages/class1/Aula';
 import porque1 from '../pages/class1/porque';
@@ -12,7 +12,7 @@ import monoIdeal from '../pages/class1/monoIdeal';
 
 function Routes() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         <Route exact path="/" component={ InitialPage } />
         <Route exact path="/transformador" component={ Aula1 } />
@@ -24,7 +24,7 @@ function Routes() {
         <Route exact path="/transformador/ideal" component={ ideal } />
         <Route exact path="/transformador/monoIdeal" component={ monoIdeal } />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

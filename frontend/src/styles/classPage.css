@@ -1,0 +1,14 @@
+.classPage {
+  display: flex;
+  margin-right: 10rem;
+  margin-left: 10px;
+}
+
+.textList {
+  list-style: circle;
+  color: black;
+}
+
+.imagemNucleo {
+  height: 10rem;
+}

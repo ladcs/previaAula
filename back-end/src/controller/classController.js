@@ -10,8 +10,8 @@ module.exports = class Aula {
   static createClass = async (req, res, next) => {
     try {
       const { originalname: name, size, filename: key } = req.file;
-      const { why, className } = req.body
-      const aula = await Service.insert({ className, name, size, key, why,content, otherSourcer });
+      const { className } = req.body
+      const aula = await Service.insert({ className, name, size, key });
       res.status(StatusCodes.CREATED).json(newClass);
     } catch (err) {
       console.log(err);

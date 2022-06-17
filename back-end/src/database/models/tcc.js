@@ -20,4 +20,4 @@ const db = require('.');
     timestamps: false,
   });
 
-module.exports = TCC
+module.exports = TCC;

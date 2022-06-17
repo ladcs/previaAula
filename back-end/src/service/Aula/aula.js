@@ -1,5 +1,6 @@
 require('dotenv').config();
 const Aula = require('../../database/models/class');
+const Linksclass = require('../../database/models/linksclass');
 
 module.exports = class AulaService {
   static getAll = async () => {
@@ -8,9 +9,12 @@ module.exports = class AulaService {
   };
 
   static insert = async (body) => {
-    const { name, size, key, why, content } = body;
-    const link = `${process.env.APP_URL}/files/${key}`;
-    const created = await Aula.create({ className, why, content })
-    return created;
+    const { name, size, key, className } = body;
+    let classContent = await Aula.findOne({ where: { class: className } });
+    if (!classContent) classContent = await Aula.create({ className });
+    const url = `${process.env.APP_URL}/files/${key}`;
+    const { id: classId } = classContent;
+    const createdLink = await Linksclass.create({ name, size, key, url, classId });
+    return createdLink;
   }
 }

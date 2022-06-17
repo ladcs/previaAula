@@ -14,7 +14,7 @@ module.exports = {
       size: {
         type: Sequelize.STRING
       },
-      filename: {
+      key: {
         type: Sequelize.STRING
       },
       url: {

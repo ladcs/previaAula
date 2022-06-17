@@ -11,12 +11,6 @@ module.exports = {
       class: {
         type: Sequelize.STRING
       },
-      why: {
-        type: Sequelize.STRING
-      },
-      content: {
-        type: Sequelize.STRING
-      },
     });
   },
   async down(queryInterface, Sequelize) {

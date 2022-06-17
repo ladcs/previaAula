@@ -15,8 +15,6 @@ Class.init({
     autoIncrement: true,
   },
   class: DataTypes.STRING,
-  why: DataTypes.STRING,
-  content: DataTypes.STRING,
 }, {
   sequelize: db,
   timestamps: false,

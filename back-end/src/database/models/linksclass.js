@@ -2,19 +2,17 @@ const { Model, DataTypes } = require('sequelize');
 const db = require('.');
 
 class Linksclass extends Model {
-  static associate(models) {
-    // define association here
-    linksclass.belongsTo(models.class, { foreignKey: 'classId', as: 'link' });
-  }
 }
 Linksclass.init({
   name: DataTypes.STRING,
   size: DataTypes.STRING,
   key: DataTypes.STRING,
   url: DataTypes.STRING,
+  classId: DataTypes.INTEGER,
 }, {
-  sequelize,
+  sequelize: db,
   modelName: 'linksclass',
+  timestamps: false,
 });
 
 module.exports = Linksclass;

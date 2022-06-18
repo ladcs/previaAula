@@ -9,7 +9,7 @@ const ClassOptions = () => {
       <Navbar bg="light" variant="light">
             <Container>
               <ul className='classOptions'>
-                <li><Link to="/transformador"> Lab 1: Transformadores </Link></li>
+              <Link className='linkToDownload' to="/transformador"><li> Aula 1: Transformadores </li></Link>
                 <li>Lab 2: Transformador: circuito equivalente</li>
                 <li> ... </li>
                 <li>Lab N: MIT</li>

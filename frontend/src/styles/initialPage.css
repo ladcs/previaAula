@@ -7,10 +7,18 @@
   justify-content: space-evenly;
   align-items: center!important;
   width: 30rem;
+  max-width: 400px;
+}
+
+.linkToDownload {
+  width: 100%;
+  max-width: 400px;
 }
 
 .classOptions a {
   color: black;
+  width: 100%;
+  max-width: 400px;
 }
 
 .conteiner {
@@ -21,6 +29,11 @@
 .centerOptions {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 500px;
+
 }
 
 .classOptions li {

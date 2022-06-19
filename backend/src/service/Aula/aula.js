@@ -17,6 +17,13 @@ module.exports = class AulaService {
     return arrayAllTeam;
   };
 
+  static changeNameFileLink = async (name, id) => {
+    await Linksclass.update({ name }, { where: { id } });
+  }
+
+  static changeClassName = async (className, id) => {
+    await Aula.update({class: className}, { where: { id } });
+  }
   static deleteLink = async (id) => {
     const link = await Linksclass.findByPk(id);
     if (!link) throw new notFound('link not exist');

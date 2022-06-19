@@ -7,5 +7,6 @@ const app = express.Router();
 
 app.post('/login', controller.login);
 app.post('/login/register', auth, controller.createUser);
+app.patch('/login/edit', controller.changePassword);
 
 module.exports = app;

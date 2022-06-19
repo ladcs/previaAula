@@ -10,6 +10,12 @@ module.exports = class User {
     this.token = new Token();
   }
 
+  async changePassword(jwtToken, newPass) {
+    const { id } = this.token.decode(jwtToken)
+    const password = await this.passCrypt.crypto(newPass);
+    await Model.update({ password }, { where: { id } });
+  }
+
   async newUser(user, passwordIn) {
     const password = await this.passCrypt.crypto(passwordIn);
     const userExist = await Model.findOne({ where: { user } });
@@ -19,8 +25,6 @@ module.exports = class User {
   }
 
   async login(user, inPassword) {
-    console.log(`user ${user}`);
-    console.log(`password ${inPassword}`);
     LoginError.dadaOkay(user, inPassword);
 
     const userFound = await Model.findOne({ where: { user } });

@@ -10,6 +10,10 @@ module.exports = class TccService {
     return arrayAllTeam;
   };
 
+  static async changeTccName(tcc, id) {
+    await Tcc.update({ tcc }, { where: { id } });
+  }
+
   static insert = async (body) => {
     const { key } = body;
     const link = `${process.env.APP_URL}/files/${key}`;

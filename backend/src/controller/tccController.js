@@ -19,6 +19,18 @@ module.exports = class Tcc {
     }
   }
 
+  static changeNameTcc = async (req, res, next) => {
+    try {
+      const { id } = req.params;
+      const { tcc } = req.body;
+      res.status(StatusCodes.CREATED).json('uploaded');
+      await Service.changeTccName(tcc, id);
+    } catch (err) {
+      console.log(err);
+      next(err);
+    }
+  }
+
   static delete = async (req, res, next) =>{
     try {
       const { id } = req.params;

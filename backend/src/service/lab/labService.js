@@ -9,6 +9,10 @@ module.exports = class LabService {
     const arrayAllTeam = await Lab.findAll();
     return arrayAllTeam;
   };
+
+  static async changeLabName(labClass, id) {
+    await Lab.update({ labClass }, { where: { id } });
+  }
   
   static delete = async (id) => {
     const lab = await Lab.findByPk(id);

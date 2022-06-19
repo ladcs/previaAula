@@ -7,6 +7,18 @@ module.exports = class Lab {
     this.service = new Service();
   }
 
+  static changeNameLab = async (req, res, next) => {
+    try {
+      const { labClass } = req.body;
+      const { id } = req.params;
+      await Service.changeLabName(labClass,id)
+      res.status(StatusCodes.OK).json('updated');
+    } catch (err) {
+      console.log(err);
+      next(err);
+    }
+  }
+
   static createLab = async (req, res, next) => {
     try {
       const { labClass } = req.body;

@@ -8,5 +8,6 @@ const app = express.Router();
 app.get('/tcc', controller.getAll);
 app.post('/tcc', auth, multer(multerConfig).single('file'), controller.createTcc);
 app.delete('/tcc/:id', auth, controller.delete);
+app.patch('/tcc/:id', auth, controller.changeNameTcc);
 
 module.exports = app;

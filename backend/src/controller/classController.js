@@ -7,6 +7,30 @@ module.exports = class Aula {
     this.service = new Service();
   }
 
+  static changeClassName = async (req, res, next) => {
+    try {
+      const { className } = req.body;
+      const { id } = req.params;
+      await Service.changeClassName(className, id);
+      res.status(StatusCodes.OK).json('updated');
+    } catch (err) {
+      console.log(err);
+      next(err);
+    }
+  }
+
+  static changeNameFileLink = async (req, res, next) => {
+    try {
+      const { name } = req.body;
+      const { id } = req.params;
+      await Service.changeNameFileLink(name, id);
+      res.status(StatusCodes.OK).json('updated');
+    } catch (err) {
+      console.log(err);
+      next(err);
+    }
+  }
+
   static createLink = async (req, res, next) => {
     try {
       const { originalname, size, filename: key } = req.file;

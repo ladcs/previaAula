@@ -38,7 +38,7 @@ const DontLogged = (userName, password, userIn, setUser, handleOnClick, errorLog
   </div>);
 }
 
-const Logged = () => {
+const Logged = (setLogged) => {
   return(
     <div className='centerOptions'>
       <ul className='classOptions'>
@@ -56,6 +56,11 @@ const Logged = () => {
           <Link to='/'>
             Pagina Inicial
           </Link>
+        </li>
+        <li>
+          <button type='button' onClick={() => setLogged(false)}>
+            Sair
+          </button>
         </li>
       </ul>
     </div>
@@ -99,7 +104,7 @@ export default function InitialPage() {
         </title>
       </Helmet>
       <Header />
-      {!logged ? DontLogged(userName, password, userIn, setUser, handleOnClick, errorLogin) : Logged() }
+      {!logged ? DontLogged(userName, password, userIn, setUser, handleOnClick, errorLogin) : Logged(setLogged) }
     </div>
   );
 };

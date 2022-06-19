@@ -9,9 +9,10 @@ module.exports = class Aula {
 
   static createLink = async (req, res, next) => {
     try {
-      const { originalname: name, size, filename: key } = req.file;
+      const { originalname, size, filename: key } = req.file;
+      const { name } = req.body;
       const { id: classId } = req.params;
-      const newLink = await Service.insertLink({name, size, key, classId});
+      const newLink = await Service.insertLink({ name, size, key, classId, originalname });
       res.status(StatusCodes.CREATED).json(newLink);
     } catch (err) {
       console.log(err);

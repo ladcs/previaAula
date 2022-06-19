@@ -4,8 +4,9 @@ import ClassesContext from './ClassProvider';
 
 const Provider = ({ children }) => {
   const [logged, setLogged] = useState(false);
+  const [ pageLogin, setPageLogin] = useState(false);
   
-  const contextValue = {logged, setLogged};
+  const contextValue = {logged, setLogged, pageLogin, setPageLogin};
 
   return (
     <ClassesContext.Provider value= { contextValue }>

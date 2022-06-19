@@ -1,18 +1,55 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navbar, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import '../styles/initialPage.css'
+import api from '../services/api';
+import '../styles/initialPage.css';
+
+const endpoint = '/class';
+
 
 const ClassOptions = () => {
+  const [classes, setClasses] = useState([]);
+  const [classesOpen, setClassesOpen] = useState([]);
+  useEffect(() => {
+    api.get(endpoint).then(res => {
+      setClasses([...res.data]);
+    });
+    if (classes.length > classesOpen.length) {
+      classes.forEach((_c) => setClassesOpen([...classesOpen, false]));
+    }
+  });
+  function handleClick(i) {
+    const newOpen = [...classesOpen];
+    newOpen[i] = !newOpen[i];
+    setClassesOpen([...newOpen]);
+  }
   return (
     <div className='centerOptions'>
       <Navbar bg="light" variant="light">
         <Container>
           <ul className='classOptions'>
-            <Link className='linkToDownload' to="/transformador"><li> Aula 1: Transformadores </li></Link>
-            <li>Aula 2: Transformador: circuito equivalente</li>
-            <li> ... </li>
-            <li>Aula N: MIT</li>
+            {
+              classes
+                .map((c, i) => (<li key={ c.id }>
+                  <button
+                    onClick={ () => handleClick(i) }>
+                    { c.class }
+                  </button>
+                  { classesOpen[i] && c.linksclasses.map((l) => (
+                    <ul key={l.name}>
+                      <a
+                        className='linkToDownload'
+                        target='_blank'
+                        rel='noonpener noreferrer'
+                        href={l.url}
+                        >
+                        <li>
+                          {l.name}
+                        </li>
+                      </a>
+                    </ul>
+                  )) }
+                </li>))
+            }
           </ul>
         </Container>
       </Navbar> 

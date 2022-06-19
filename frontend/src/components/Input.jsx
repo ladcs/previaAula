@@ -10,7 +10,6 @@ export default function Input(props) {
     onChange,
     className,
   } = props;
-  console.log(value);
   return (
     <label>
       <span>

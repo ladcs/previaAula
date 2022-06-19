@@ -1,5 +1,5 @@
 import '../styles/global.css';
-import React, { useState, useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
 import Input from '../components/Input';
@@ -7,10 +7,13 @@ import Classes from '../context/ClassProvider';
 import { handleOnChange } from '../util/handleFunctions';
 
 export default function InitialPage() {
+  const { setLogged, setPageLogin } = useContext(Classes);
   const [user, setUser] = useState({
     userName: '',
     password: '',
   });
+
+  setPageLogin(true);
 
 
   const { userName, password } = user;

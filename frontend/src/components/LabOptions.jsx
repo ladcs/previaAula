@@ -1,18 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navbar, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import '../styles/initialPage.css'
+import api from '../services/api';
+import '../styles/initialPage.css';
 
-const ClassOptions = () => {
+const endpoint = 'lab';
+
+const LabsOptions = () => {
+  const [labs, setLabs] = useState([]);
+  useEffect(()=> {
+    api.get(endpoint).then((res) => {
+      setLabs([...res.data]);
+    });
+  })
   return (
     <div className='centerOptions'>
       <Navbar bg="light" variant="light">
             <Container>
               <ul className='classOptions'>
-              <Link className='linkToDownload' to="/transformador"><li> Aula 1: Transformadores </li></Link>
-                <li>Lab 2: Transformador: circuito equivalente</li>
-                <li> ... </li>
-                <li>Lab N: MIT</li>
+                {labs.map((l) => (<a key={ l.id }
+                  className='linkToDownload'
+                  target='_blank'
+                  rel='noonpener noreferrer'
+                  href={l.link}>
+                  <li> 
+                    { l.labClass }
+                  </li>
+                </a>))}
               </ul>
             </Container>
           </Navbar> 
@@ -20,4 +33,4 @@ const ClassOptions = () => {
   );
 }
 
-export default ClassOptions;
+export default LabsOptions;

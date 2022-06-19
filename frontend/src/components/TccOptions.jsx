@@ -1,17 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navbar, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import '../styles/initialPage.css'
+import '../styles/initialPage.css';
+import api from '../services/api';
 
-const ClassOptions = () => {
+const endpoint = '/tcc';
+
+const TccOptions = () => {
+  const [tccs, setTccs] = useState([]);
+  useEffect(()=> {
+    api.get(endpoint).then((res) => {
+      setTccs([...res.data]);
+    })
+  })
   return (
     <div className='centerOptions'>
       <Navbar bg="light" variant="light">
             <Container>
               <ul className='classOptions'>
-              <Link className='linkToDownload' to="/transformador"><li> Aula 1: Transformadores </li></Link>                <li>TCC 2: Transformador: circuito equivalente</li>
-                <li> ... </li>
-                <li>Lab N: MIT</li>
+              {
+                tccs.map((t) => (
+                  <a
+                    key={ t.id }
+                    className='linkToDownload'
+                    target='_blank'
+                    rel='noonpener noreferrer'
+                    href={ t.link }>
+                      <li>
+                        { t.tcc }
+                      </li>
+
+                  </a>
+                ))
+              }
               </ul>
             </Container>
           </Navbar> 
@@ -19,4 +39,4 @@ const ClassOptions = () => {
   );
 }
 
-export default ClassOptions;
+export default TccOptions;

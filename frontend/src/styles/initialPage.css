@@ -21,6 +21,14 @@
   max-width: 400px;
 }
 
+.classOptions button {
+  color: black;
+  background-color: rgba(178, 228, 183, 0);
+  width: 100%;
+  max-width: 400px;
+  border: none;
+}
+
 .conteiner {
   width: 100%;
   display: flex;

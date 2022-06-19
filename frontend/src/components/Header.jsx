@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Navbar, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Classes from '../context/ClassProvider';
 import Deel from '../images/simbolo_deel.jpg';
 import UEL from '../images/simbolo_uel.jpg';
 import '../styles/Header.css';
 
 const Header = () => {
+  const {logged, pageLogin} = useContext(Classes);
   const urlPortal = 'https://portal.uel.br/portais/pages/portais.php';
   const urlEstude = 'https://portal.uel.br/estude-na-uel/';
   const urlOportunidades = 'https://portal.uel.br/oportunidades/';
@@ -32,8 +34,9 @@ const Header = () => {
         <Navbar bg="light" variant="light">
             <Container>
               <ul>
+                {!(logged || pageLogin) && <li><Link to='/login'> Login </Link></li> }
                 <li><a href={ urlUEL }> Voltar para UEL </a></li>
-              <li><a href={ urlCTU }> Voltar para CTU </a></li>
+                <li><a href={ urlCTU }> Voltar para CTU </a></li>
               </ul>
             </Container>
         </Navbar>

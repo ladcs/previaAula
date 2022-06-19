@@ -14,6 +14,7 @@ const newUserToAPI = async (body)=> {
 }
 
 export default function RegisterPage() {
+  const [created, setCreated] = useState(false);
   const [newUser, setNewUser] = useState({
     user: '',
     password: '',
@@ -27,7 +28,9 @@ export default function RegisterPage() {
     try {
       await newUserToAPI(newUser);
       setErrorRegister(false);
+      setCreated(true);
     } catch (error) {
+      setCreated(false);
       setErrorRegister(true);
     }
   }
@@ -41,11 +44,12 @@ export default function RegisterPage() {
         </title>
       </Helmet>
       <Header />
+      { created && <p>Usuário cadastrado com sucesso!</p>}
       <Input
       label='Novo Usuário'
       type='text'
       value={ user }
-      id='newUser'
+      id='user'
       onChange={ (e) => handleOnChange(e, newUser, setNewUser) }
       />
       <Input

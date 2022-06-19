@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
 import ClassOptions from '../components/ClassOptions';
@@ -9,7 +9,7 @@ import Classes from '../context/ClassProvider';
 
 const InitialPage = () => {
   const { setPageLogin } = useContext(Classes);
-  setPageLogin(false);
+  useEffect(()=> setPageLogin(false))
   return (
     <div>
       <Helmet>

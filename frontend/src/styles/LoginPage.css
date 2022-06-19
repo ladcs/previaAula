@@ -8,6 +8,8 @@
   align-items: center!important;
   width: 30rem;
   max-width: 400px;
+  position: relative;
+  top: 50%;
 }
 
 .linkToDownload {
@@ -46,9 +48,9 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 100%;
+  width: 50%;
   max-width: 500px;
-
+  margin: 0 auto;
 }
 
 .classOptions li {

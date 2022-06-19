@@ -6,7 +6,7 @@ const auth = require('../middleware/auth');
 const app = express.Router();
 
 app.get('/tcc', controller.getAll);
-app.post('/tcc', multer(multerConfig).single('file'), controller.createTcc);
-app.delete('/tcc/:id', controller.delete);
+app.post('/tcc', auth, multer(multerConfig).single('file'), controller.createTcc);
+app.delete('/tcc/:id', auth, controller.delete);
 
 module.exports = app;

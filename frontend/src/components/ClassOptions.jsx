@@ -37,13 +37,13 @@ const ClassOptions = () => {
                   { classesOpen[i] && c.linksclasses.map((l) => (
                     <ul key={l.name}>
                       <a
-                        className='linkToDownload'
+                        className='link'
                         target='_blank'
                         rel='noonpener noreferrer'
                         href={l.url}
                         >
                         <li>
-                          {l.name}
+                          *{l.name}
                         </li>
                       </a>
                     </ul>

@@ -6,7 +6,7 @@ const auth = require('../middleware/auth');
 const app = express.Router();
 
 app.get('/lab', controller.getAll);
-app.post('/lab', multer(multerConfig).single('file'), controller.createLab);
-app.delete('/lab/:id', controller.delete);
+app.post('/lab', auth, multer(multerConfig).single('file'), controller.createLab);
+app.delete('/lab/:id', auth, controller.delete);
 
 module.exports = app;
